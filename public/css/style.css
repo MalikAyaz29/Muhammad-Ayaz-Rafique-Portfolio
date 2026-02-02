@@ -2,21 +2,21 @@
    CSS RESET & VARIABLES
 ========================= */
 :root {
-  --bg: #f9f9f9;
-  --text: #222;
+  --bg: #f8fafc;
+  --text: #0f172a;
   --primary: #2563eb;
   --secondary: #1e40af;
   --card: #ffffff;
-  --border: #e5e7eb;
+  --border: #e2e8f0;
 }
 
 body.dark {
-  --bg: #0f172a;
+  --bg: #0b1120;
   --text: #e5e7eb;
-  --primary: #38bdf8;
-  --secondary: #0ea5e9;
-  --card: #020617;
-  --border: #1e293b;
+  --primary: #3b82f6;
+  --secondary: #38bdf8;
+  --card: #111827;
+  --border: #1f2937;
 }
 
 * {
@@ -56,8 +56,10 @@ nav {
 .navbar a {
   color: var(--text);
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .navbar a:hover,
@@ -83,7 +85,7 @@ nav {
 }
 
 /* =========================
-   HERO (FIXED IMAGE)
+   HERO
 ========================= */
 .hero {
   min-height: 90vh;
@@ -127,11 +129,14 @@ nav {
 .btn {
   background: var(--primary);
   color: white;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
   margin-right: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -150,6 +155,21 @@ nav {
   text-align: center;
 }
 
+.skills h2 {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.skills h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
 .skill-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -158,11 +178,24 @@ nav {
   margin: auto;
 }
 
-.card {
+/* =========================
+   CARDS (GLOBAL)
+========================= */
+.card,
+.project-card,
+.tool-card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 14px;
   border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.project-card:hover,
+.tool-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.18);
 }
 
 /* =========================
@@ -197,7 +230,7 @@ nav {
 }
 
 /* =========================
-   PROJECTS (CENTERED HEADING)
+   PROJECTS
 ========================= */
 .projects-section {
   padding: 60px 20px;
@@ -206,6 +239,17 @@ nav {
 .projects-section h1 {
   text-align: center;
   margin-bottom: 40px;
+  position: relative;
+}
+
+.projects-section h1::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
 }
 
 .projects-container {
@@ -214,13 +258,6 @@ nav {
   gap: 25px;
   max-width: 1100px;
   margin: auto;
-}
-
-.project-card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
 }
 
 /* =========================
@@ -238,13 +275,6 @@ nav {
   margin: auto;
 }
 
-.tool-card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-}
-
 /* =========================
    CONTACT
 ========================= */
@@ -253,6 +283,16 @@ nav {
   max-width: 600px;
   margin: auto;
   text-align: center;
+}
+
+.contact-section h1::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
 }
 
 /* =========================
@@ -264,6 +304,7 @@ footer {
   text-align: center;
   padding: 25px;
   margin-top: 60px;
+  font-size: 0.9rem;
 }
 
 /* =========================
